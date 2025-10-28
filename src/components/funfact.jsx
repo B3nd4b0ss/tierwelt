@@ -36,7 +36,7 @@ export default function FunFact() {
     return (
         <div className="funfact-card" onClick={next}>
             {facts[index]}
-            <span className="funfact-hint">Klick für nächsten Fact</span>
+            <span className="funfact-hint">Klick für nächsten Fakt</span>
         </div>
     );
 }
