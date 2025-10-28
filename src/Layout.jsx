@@ -1,20 +1,31 @@
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {Link, Outlet} from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
 
 function Layout() {
     const [isOpened, setIsOpened] = useState(false);
     const toggleMenu = () => setIsOpened(!isOpened);
+    const navRef = useRef(null);
 
-    const [isClicked, setIsClicked] = useState(false);
-    const handleClick = () => setIsClicked(!isClicked);
+    useEffect(() => {
+        if (!isOpened) return;
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setIsOpened(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+    }, [isOpened]);
 
     return (
         <>
             <div className="main">
                 {/* Header inside main */}
                 <div className="header">
-                    <nav className="burger-dropdown">
+                    <nav className="burger-dropdown" ref={navRef}>
                         <button
                             onClick={toggleMenu}
                             className={`burgerbtn ${isOpened ? "open" : ""}`}
@@ -25,19 +36,14 @@ function Layout() {
                         </button>
                         {isOpened && (
                             <div className="burger-menu">
-                                <Link to="/">Home</Link>
-                                <Link to="/habitat">Habitat</Link>
-                                <Link to="/lifestyle">Lifestyle</Link>
-                                <Link to="/importance">Importance</Link>
-                                <Link to="/contact">Kontakt</Link>
+                                <Link to="/" onClick={toggleMenu}>Home</Link>
+                                <Link to="/habitat" onClick={toggleMenu}>Wohnort</Link>
+                                <Link to="/lifestyle" onClick={toggleMenu}>Lebensstil</Link>
+                                <Link to="/importance" onClick={toggleMenu}>Fakten</Link>
+                                <Link to="/contact" onClick={toggleMenu}>Kontakt</Link>
                             </div>
                         )}
                     </nav>
-                    <div>Animal</div>
-                    <div>
-                        {isClicked && <input type="text" placeholder="Search"/>}
-                        <SearchIcon className="searchicon" onClick={handleClick}/>
-                    </div>
                 </div>
 
                 {/* Outlet 1 */}

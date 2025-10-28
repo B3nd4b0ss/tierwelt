@@ -1,5 +1,8 @@
 import {Link} from "react-router-dom";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import MoveDown from "../components/movedown.jsx"
+import ContactForm from "../components/contactform";
+import MoveTop from "../components/movetop.jsx"
+
 
 function Contact() {
     return (
@@ -13,7 +16,11 @@ function Contact() {
                     <div className="left-title">Biber</div>
                     <div className="right-text">
                         Du möchtest mehr über den Biber erfahren oder hast Fragen zu unseren Projekten?
-                        Wir freuen uns über deine Nachricht! Kontaktiere uns gern über die untenstehenden Wege.
+                        Wir freuen uns über dein Interesse und deine Nachricht! Ob du mehr über unsere Arbeit wissen
+                        möchtest, dich für unsere Aktivitäten interessierst oder eigene Ideen einbringen willst – wir
+                        sind gern für dich da.
+                        Kontaktiere uns einfach über die untenstehenden Wege. Wir melden uns so bald wie möglich bei
+                        dir!
                     </div>
                 </div>
 
@@ -22,20 +29,23 @@ function Contact() {
                     <ul className="info">
                         <li>
                             Verein
-                            <div>Biberfreunde&nbsp;e.&nbsp;V.</div>
+                            <div>Standortförderung Zürcher Weinland</div>
                         </li>
                         <li>
                             Standort
-                            <div>Auenweg&nbsp;7, 12345&nbsp;Flussstadt</div>
+                            <div>Humlikonerstrasse 1, 8450 Andelfingen</div>
                         </li>
                         <li>
-                            Kontakt
-                            <div>
-                                <a href="mailto:info@biberfreunde.de">info@biberfreunde.de</a><br/>
-                                <a href="https://www.biberfreunde.de" target="_blank" rel="noreferrer">
-                                    www.biberfreunde.de
-                                </a>
-                            </div>
+                            Mail
+                            <div><a href="mailto:info@zuecher-weinland.ch"
+                                    className="fancy-link">info@zuecher-weinland.ch</a></div>
+                        </li>
+                        <li>
+                            Weitere Infos
+                            <div><a href="https://www.zuercher-weinland.ch/ausflugsziel/bibergebiet-marthalen"
+                                    target="_blank" rel="noreferrer" className="fancy-link">
+                                www.zuercher-weinland.ch
+                            </a></div>
                         </li>
                     </ul>
 
@@ -49,19 +59,23 @@ function Contact() {
 
                     <div className="arrow-down-container">
                         Wir freuen uns auf deine Nachricht!
-                        <ArrowDownwardIcon className="arrow-down"/>
+                        <MoveDown className="arrow-down"/>
                     </div>
                 </div>
 
             </div>
             <div className="main-content">
+                <div className="info-box top-left">
+                    <h2>Kontaktformular</h2>
+                    <ContactForm/>
+                </div>
                 <div className="info-box bottom-right">
                     <h2>Impressum</h2>
-                    <p>Biberfreunde&nbsp;e.&nbsp;V. – Verein zur Förderung des Biberschutzes</p>
-                    <p>Vertreten durch: Dr.&nbsp;Maria&nbsp;Fluss &amp; Jonas&nbsp;Auendorf</p>
-                    <p>VR&nbsp;1234, Amtsgericht&nbsp;Flussstadt • USt-IdNr.&nbsp;DE&nbsp;12&nbsp;345&nbsp;6789</p>
-                    <p>Inhaltlich verantwortlich gem. § 55 Abs. 2 RStV: Jonas&nbsp;Auendorf</p>
+                    <p>Standortförderung Zürcher Weinland – Verein zur Förderung des Biberschutzes</p>
+                    <p>Vertreten durch: Ben Grob</p>
+                    <p>Inhaltlich verantwortlich gem. § 28 ZGB: Ben Grob</p>
                 </div>
+                <MoveTop/>
             </div>
         </>
     );

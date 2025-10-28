@@ -203,6 +203,45 @@ INFO
 }
 
 /*
+LINKS
+ */
+.fancy-link {
+    color: #ffd36b;
+    text-decoration: none;
+    position: relative;
+    transition: color .25s ease;
+}
+
+.fancy-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    opacity: .4;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.fancy-link:hover,
+.fancy-link:focus {
+    color: #ffe8a8;
+}
+
+.fancy-link:hover::after,
+.fancy-link:focus::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.fancy-link:active {
+    color: #ffbf3e;
+}
+
+/*
 CURRENTPAGE
  */
 .cur-page {
@@ -296,16 +335,32 @@ POSITIONING
     left: -40px;
 }
 
+.top-right {
+    top: 50px;
+    right: -40px;
+}
+
 .bottom-right {
     bottom: 20px;
     right: -40px;
 }
 
+.bottom-left {
+    bottom: 20px;
+    left: -40px;
+}
+
 
 .embeded-maps {
-    position: absolute;
-    top: 50px;
-    right: -40px;
+    background: none;
+    backdrop-filter: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.embeded-maps:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 .embeded-maps iframe {
@@ -373,6 +428,11 @@ MEDIA QUERIES
         margin-bottom: 1.5rem;
     }
 
+    .embeded-maps iframe {
+        height: 30vh;
+        width: 100%;
+    }
+
     .main-content {
         display: flex;
         flex-direction: column;
@@ -381,7 +441,6 @@ MEDIA QUERIES
 }
 
 @media (max-width: 480px) {
-    /* Gesamt­layout lockerer machen */
     .main {
         width: 95vw;
         height: auto;
@@ -389,13 +448,11 @@ MEDIA QUERIES
         padding: 1.2rem;
     }
 
-    /* Header lesbarer machen */
     .header {
         font-size: 1rem;
         margin-bottom: 1.2rem;
     }
 
-    /* Burger-Menü: auf voller Breite unter Header ausklappen */
     .burger-menu {
         position: static;
         margin-top: 0.8rem;
@@ -408,7 +465,6 @@ MEDIA QUERIES
         text-align: center;
     }
 
-    /* Titel & Überschriften verkleinern */
     .page-title {
         font-size: 2rem;
         margin-bottom: 1.2rem;
@@ -419,20 +475,17 @@ MEDIA QUERIES
         line-height: 1;
     }
 
-    /* Fließtext etwas kleiner */
     .right-text,
     .info-box p {
         font-size: 0.95rem;
     }
 
-    /* Grid-Abstände reduzieren */
     .row,
     .row-bottom {
         gap: 1rem;
         margin-bottom: 1.2rem;
     }
 
-    /* Info-Kacheln enger zusammenrücken */
     .info {
         flex-wrap: wrap;
         justify-content: center;
@@ -443,7 +496,6 @@ MEDIA QUERIES
         padding: 0.8rem;
     }
 
-    /* Pfeil & Cur-Page enger positionieren */
     .arrow-down-container {
         bottom: 10px;
     }
@@ -453,9 +505,12 @@ MEDIA QUERIES
         padding: 6px 10px;
     }
 
-    /* Eingabefeld innen fixieren */
     .header input[type="text"] {
         max-width: 130px;
         font-size: 0.9rem;
+    }
+
+    .arrow-down-container {
+        display: none;
     }
 }

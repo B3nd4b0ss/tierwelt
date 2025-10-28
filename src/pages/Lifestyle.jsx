@@ -1,13 +1,13 @@
 import {Link} from "react-router-dom";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-
+import MoveDown from "../components/movedown.jsx"
+import MoveTop from "../components/movetop.jsx"
 
 function Lifestyle() {
     return (
         <>
             <div className="head-content">
                 {/* Title */}
-                <h1 className="page-title">Lifestyle</h1>
+                <h1 className="page-title">Lebensstil</h1>
 
                 {/* Row 2: Title + Text */}
                 <div className="row">
@@ -48,7 +48,7 @@ function Lifestyle() {
                     </ul>
                     <div className="arrow-down-container">
                         Entdecke mehr über den Lifestyle
-                        <ArrowDownwardIcon className="arrow-down"/>
+                        <MoveDown className="arrow-down"/>
                     </div>
                 </div>
             </div>
@@ -97,6 +97,7 @@ function Lifestyle() {
                         Nahrungsbeschaffen oder beim Schutz des Baus.
                     </p>
                 </div>
+                <MoveTop/>
             </div>
         </>
     );

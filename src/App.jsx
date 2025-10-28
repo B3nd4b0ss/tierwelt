@@ -9,7 +9,7 @@ import Contact from './pages/Contact.jsx';
 
 function App() {
     return (
-        <Router>
+        <Router basename="/tierwelt/">
             <Routes>
                 <Route path="/" element={<Layout/>}>
                     {/* Routes inside Layout */}

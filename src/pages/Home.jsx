@@ -13,8 +13,8 @@ function Home() {
                     <div className="right-text">
                         Der Biber (Castor spp.) ist nach dem Capybara das zweitgrösste
                         Nagetier der Welt. Durch sein bemerkenswert dichtes Fell,
-                        scharfe Schneidezähne und das charakteristische breite Paddelschwanz
-                        ist er perfekt fuer ein Leben im Wasser angepasst. Als echter
+                        scharfe Schneidezähne und der charakteristische breite Paddelschwanz
+                        ist er perfekt für ein Leben im Wasser angepasst. Als echter
                         Ökosystem-Ingenieur formt er mit Dämmen ganze Landschaften
                         und schafft dabei neue Lebensraume fuer zahlreiche Arten.
                     </div>

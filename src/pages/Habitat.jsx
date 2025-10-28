@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import MoveTop from "../components/movetop.jsx"
+import MoveDown from "../components/movedown.jsx"
 
 function Habitat() {
     return (
         <>
             <div className="head-content">
                 {/* Title */}
-                <h1 className="page-title">Habitat</h1>
+                <h1 className="page-title">Wohnort</h1>
 
                 {/* Row 2: Title + Text */}
                 <div className="row">
@@ -49,7 +50,7 @@ function Habitat() {
                         <div>
                             Entdecke mehr über den Lebensraum
                         </div>
-                        <ArrowDownwardIcon className="arrow-down"/>
+                        <MoveDown className="arrow-down" />
                     </div>
                 </div>
             </div>
@@ -71,7 +72,7 @@ function Habitat() {
                     </p>
                 </div>
 
-                <div className="embeded-maps">
+                <div className="info-box embeded-maps top-right">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d172134.62099170894!2d8.33955908671874!3d47.61439990000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a82bcd4432ad9%3A0x203b8dd37eaf170!2sBibergebiet%20bei%20Marthalen!5e0!3m2!1sde!2sch!4v1761230342489!5m2!1sde!2sch"
                         loading="lazy"
@@ -95,6 +96,7 @@ function Habitat() {
                         Gleichgewicht zahlreicher Landschaften.
                     </p>
                 </div>
+                <MoveTop/>
             </div>
         </>
     );

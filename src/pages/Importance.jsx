@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
+import Funfact from "../components/funfact";
+import MoveTop from "../components/movetop.jsx"
+import MoveDown from "../components/movedown.jsx"
 
 function Importance() {
     return (
@@ -47,7 +49,7 @@ function Importance() {
 
                     <div className="arrow-down-container">
                         Erfahre mehr über Bedeutung & Schutz
-                        <ArrowDownwardIcon className="arrow-down"/>
+                        <MoveDown className="arrow-down"/>
                     </div>
                 </div>
             </div>
@@ -68,6 +70,11 @@ function Importance() {
                     </p>
                 </div>
 
+                <div className="info-box top-right">
+                    <h3>Wusstest du schon ?</h3>
+                    <Funfact/>
+                </div>
+
                 <div className="info-box bottom-right">
                     <h2>Einfluss auf den Menschen</h2>
                     <p>
@@ -82,6 +89,7 @@ function Importance() {
                         Naturschutz und Biodiversität in ganz Europa.
                     </p>
                 </div>
+                <MoveTop/>
             </div>
         </>
     );
